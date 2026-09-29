@@ -2,18 +2,19 @@ import { profile } from '@/lib/data'
 import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
 
 const nav = [
-  { href: '#experience', label: 'Experience' },
-  { href: '#skills', label: 'Skills' },
-  { href: '#ai', label: 'AI Learnings' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#ai', label: 'AI' },
+  { href: '/learnings', label: 'Learnings' },
+  { href: '/#contact', label: 'Contact' },
 ]
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/75 backdrop-blur-xl">
       <div className="mx-auto flex h-12 max-w-5xl items-center justify-between px-6">
-        <a href="#top" className="text-sm font-semibold tracking-tight">
+        <a href="/" className="text-sm font-semibold tracking-tight">
           {profile.name}
         </a>
         <nav aria-label="Primary" className="hidden md:block">

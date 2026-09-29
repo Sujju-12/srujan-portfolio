@@ -107,39 +107,163 @@ export const aiLearnings = [
     ],
   },
   {
-    tag: 'Handshake AI',
-    title: 'Training Frontier AI Models',
+    tag: 'MCP',
+    title: 'Model Context Protocol',
     description:
-      'Working with Handshake AI, contributing real-world DevOps and cloud expertise to evaluate and improve how AI models reason about infrastructure problems.',
+      'Connecting agents to real tools — docs, logs, tickets and clusters — through a standard, permissioned interface I use in my daily workflow.',
     points: [
-      'Authoring expert-level DevOps prompts and scenarios',
-      'Reviewing and grading model reasoning',
-      'Identifying failure modes in technical answers',
-      'Improving model quality on cloud and Kubernetes tasks',
+      'Exposing kubectl and log queries as MCP tools',
+      'Read-only by default, scoped permissions',
+      'Pulling docs and issue context into the editor',
+      'Auditing every tool call an agent makes',
+    ],
+  },
+  {
+    tag: 'MLOps',
+    title: 'Future-ready MLOps',
+    description:
+      'Bringing CI/CD, containers, IaC and observability to the machine learning lifecycle — from training to serving and monitoring.',
+    points: [
+      'Versioning data, models and experiments',
+      'Pipelines that train, evaluate and gate releases',
+      'Model serving on Kubernetes with autoscaling',
+      'Monitoring drift, latency and cost',
     ],
   },
 ]
 
-export const projects = [
+export const handshake = {
+  title: 'Training frontier AI models with Handshake AI',
+  description:
+    'Contributing real-world DevOps and cloud expertise to evaluate and improve how AI models reason about infrastructure problems.',
+  points: [
+    'Authoring expert-level DevOps prompts and scenarios',
+    'Reviewing and grading model reasoning',
+    'Identifying failure modes in technical answers',
+    'Improving model quality on cloud and Kubernetes tasks',
+  ],
+}
+
+export type Project = {
+  slug: string
+  title: string
+  category: string
+  description: string
+  stack: string[]
+  github: string
+  live?: string
+  outcomes: string[]
+  workflow: { step: string; detail: string }[]
+}
+
+export const projects: Project[] = [
   {
-    title: 'AI Observability Platform',
+    slug: 'ai-troubleshoot-agent',
+    title: 'AI Kubernetes Troubleshoot Agent',
+    category: 'Agentic AI · AIOps',
     description:
-      'A cloud-native observability platform on Kubernetes implementing all three pillars — metrics with Prometheus and Grafana, distributed tracing with OpenTelemetry and Jaeger, and centralized logs with Loki — shipped via a Jenkins and Helm pipeline.',
-    stack: ['Kubernetes', 'Prometheus', 'Grafana', 'OpenTelemetry', 'Jaeger', 'Loki', 'Helm', 'Jenkins'],
-    href: 'https://github.com/Sujju-12/AI-Observability-Platform',
+      'An LLM-powered agent that detects failing workloads and performs root cause analysis on OOMKilled events, CrashLoopBackOff restarts and pod scheduling failures — then recommends a fix with a human in the loop.',
+    stack: ['Agentic AI', 'LLMs', 'MCP', 'RAG', 'Python', 'Kubernetes', 'EKS', 'Prometheus'],
+    github: 'https://github.com/Sujju-12',
+    outcomes: [
+      'Turns manual cluster debugging from hours into minutes',
+      'Correlates pod events, logs and metrics for a single root cause',
+      'Retrieves relevant runbooks with RAG to ground every answer',
+      'Human approval required before any change is applied',
+    ],
+    workflow: [
+      { step: 'Detect', detail: 'Watches for failing pods and warning events across namespaces.' },
+      { step: 'Gather', detail: 'Collects pod descriptions, logs, events and resource metrics via tools.' },
+      { step: 'Reason', detail: 'The LLM correlates signals with runbook context to find the root cause.' },
+      { step: 'Recommend', detail: 'Proposes a fix — limits, probes, image or scheduling changes — for approval.' },
+    ],
   },
   {
-    title: 'AI Kubernetes Troubleshooting Agent',
+    slug: 'taxi-booking-platform',
+    title: 'Taxi Booking Application',
+    category: 'CI/CD · Kubernetes',
     description:
-      'An LLM-powered agent that automatically detects and performs root cause analysis on cluster issues such as OOMKilled events, crash-loop restarts and pod scheduling failures.',
-    stack: ['Agentic AI', 'LLMs', 'Python', 'Kubernetes', 'EKS'],
-    href: 'https://github.com/Sujju-12',
+      'A taxi booking application taken from source to production with a fully automated pipeline — containerised, scanned, and deployed to Kubernetes with zero-downtime rolling updates.',
+    stack: ['Jenkins', 'Maven', 'SonarQube', 'Docker', 'Kubernetes', 'Helm', 'Trivy', 'AWS'],
+    github: 'https://github.com/Sujju-12',
+    outcomes: [
+      'End-to-end automated build, test, scan and deploy',
+      'Quality gates with SonarQube before every release',
+      'Container image scanning with Trivy',
+      'Rolling updates with fast rollback on Kubernetes',
+    ],
+    workflow: [
+      { step: 'Build', detail: 'Maven build and unit tests triggered on every commit.' },
+      { step: 'Analyse', detail: 'SonarQube static analysis enforces code quality gates.' },
+      { step: 'Containerise', detail: 'Multi-stage Docker build, scanned with Trivy and pushed to a registry.' },
+      { step: 'Deploy', detail: 'Helm deploys to Kubernetes with rolling updates and health probes.' },
+    ],
   },
   {
+    slug: 'scalable-game-deployment',
+    title: 'Scalable Game Deployment',
+    category: 'DevSecOps · Scalability',
+    description:
+      'A web game containerised with Docker, published to Docker Hub, orchestrated on Kubernetes and deployed on Vercel — load balanced with NGINX, stress-tested for scalability, secured with Trivy and SAST, and monitored with Prometheus, Grafana and Loki.',
+    stack: ['Docker', 'Docker Hub', 'Kubernetes', 'Vercel', 'NGINX', 'Trivy', 'SAST', 'Prometheus', 'Grafana', 'Loki'],
+    github: 'https://github.com/Sujju-12',
+    outcomes: [
+      'Horizontally scaled replicas behind an NGINX load balancer',
+      'Load-tested to validate scalability and autoscaling behaviour',
+      'Shift-left security with SAST and Trivy image scanning',
+      'Full visibility with metrics, dashboards and centralised logs',
+    ],
+    workflow: [
+      { step: 'Containerise', detail: 'Dockerised the game and pushed versioned images to Docker Hub.' },
+      { step: 'Secure', detail: 'SAST on source code and Trivy scans on images before release.' },
+      { step: 'Orchestrate', detail: 'Kubernetes Deployments with replicas behind an NGINX load balancer; deployed on Vercel.' },
+      { step: 'Test & Observe', detail: 'Load tests validated scaling while Prometheus, Grafana and Loki tracked health.' },
+    ],
+  },
+  {
+    slug: 'observability-stack',
+    title: 'Cloud-Native Observability Stack',
+    category: 'Observability · SRE',
+    description:
+      'A complete observability platform on Kubernetes covering all three pillars — metrics with Prometheus and Grafana, centralised logs with Loki, and distributed tracing with OpenTelemetry and Jaeger.',
+    stack: ['Kubernetes', 'Prometheus', 'Grafana', 'Loki', 'OpenTelemetry', 'Jaeger', 'Helm', 'Jenkins'],
+    github: 'https://github.com/Sujju-12/AI-Observability-Platform',
+    outcomes: [
+      'Unified metrics, logs and traces in Grafana',
+      'Alerting rules that cut mean time to detect',
+      'Helm-based, repeatable installation',
+      'Shipped through a Jenkins pipeline',
+    ],
+    workflow: [
+      { step: 'Metrics', detail: 'Prometheus scrapes cluster and app metrics with alerting rules.' },
+      { step: 'Logs', detail: 'Promtail ships container logs to Loki for fast querying.' },
+      { step: 'Traces', detail: 'OpenTelemetry instruments services and exports traces to Jaeger.' },
+      { step: 'Visualise', detail: 'Grafana dashboards correlate all three pillars in one view.' },
+    ],
+  },
+  {
+    slug: 'kubernetes-networking-lab',
     title: 'Kubernetes Networking Lab',
+    category: 'Networking · AWS',
     description:
       'Hands-on demos of ALB and NGINX Ingress controllers, API Gateway rate limiting and caching, StatefulSets and AWS developer services including CodePipeline and CodeDeploy.',
     stack: ['Ingress', 'NGINX', 'ALB', 'API Gateway', 'StatefulSet', 'CodePipeline'],
-    href: 'https://github.com/Sujju-12',
+    github: 'https://github.com/Sujju-12',
+    outcomes: [
+      'Compared ALB and NGINX Ingress routing patterns',
+      'Rate limiting and caching with API Gateway',
+      'Stateful workloads with StatefulSets',
+      'AWS-native CI/CD with CodePipeline and CodeDeploy',
+    ],
+    workflow: [
+      { step: 'Ingress', detail: 'Path and host-based routing with ALB and NGINX controllers.' },
+      { step: 'Gateway', detail: 'API Gateway throttling and response caching.' },
+      { step: 'State', detail: 'StatefulSets with persistent volumes.' },
+      { step: 'Deliver', detail: 'CodePipeline and CodeDeploy for automated releases.' },
+    ],
   },
 ]
+
+export function getProject(slug: string) {
+  return projects.find((project) => project.slug === slug)
+}
