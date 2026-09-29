@@ -27,6 +27,7 @@ export const experience = [
       'Provisioned VPC, EC2, IAM, ALB and S3 via Terraform modules with remote state and DynamoDB locking, cutting provisioning time by 65%.',
       'Enforced least-privilege RBAC across EKS clusters and 100% MFA compliance across production AWS accounts.',
       'Built Prometheus, Grafana and CloudWatch alerting that reduced mean time to detect by 45%.',
+      'Wrote Python automation with Boto3 and the Kubernetes client for resource audits, health checks, log parsing and scheduled cleanup of idle AWS resources.',
       'Drove monthly cost reviews in Cost Explorer, decommissioning idle resources and unused storage.',
     ],
   },
@@ -39,6 +40,7 @@ export const experience = [
       'Took a planned career break for family health responsibilities while deepening Kubernetes, AWS and automation expertise.',
       'Built an AI-powered Kubernetes troubleshooting agent that detects OOMKilled, crash-loop and scheduling failures and performs root cause analysis.',
       'Built a cloud-native observability platform covering metrics, traces and logs with Prometheus, Grafana, OpenTelemetry, Jaeger and Loki.',
+      'Practised Python for DevOps: CLI tools, REST API integrations, Boto3 scripts and automation for CI/CD and Kubernetes workflows.',
       'Completed structured, lab-validated DevOps training on KodeKloud.',
     ],
   },
@@ -76,8 +78,12 @@ export const skills = [
     items: ['Prometheus', 'Grafana', 'CloudWatch', 'OpenTelemetry', 'Jaeger', 'Loki'],
   },
   {
+    title: 'Python for DevOps',
+    items: ['Boto3', 'Kubernetes Client', 'Automation Scripts', 'REST APIs', 'Requests', 'CLI Tools', 'Log Parsing', 'YAML/JSON'],
+  },
+  {
     title: 'Security & Scripting',
-    items: ['IAM Least Privilege', 'SSL/TLS', 'Network Policies', 'Bash', 'Python', 'YAML', 'Linux'],
+    items: ['IAM Least Privilege', 'SSL/TLS', 'Network Policies', 'Trivy', 'SAST', 'Bash', 'Linux'],
   },
 ]
 
