@@ -132,6 +132,43 @@ export const aiLearnings = [
   },
 ]
 
+export const labPlatforms = [
+  {
+    name: 'KodeKloud',
+    focus: 'Kubernetes, Docker, Terraform, Ansible',
+    description:
+      'Scenario-based labs on live clusters. I troubleshoot broken deployments, write manifests and prepare for CKA-style tasks under time pressure.',
+    topics: ['Kubernetes', 'Helm', 'Terraform', 'Ansible', 'Linux'],
+  },
+  {
+    name: 'LabEx',
+    focus: 'Linux, DevOps tooling, Python',
+    description:
+      'Guided, hands-on challenges where I learn each new tool by using it: shell scripting, Git workflows, containers and CI basics.',
+    topics: ['Linux', 'Bash', 'Git', 'Docker', 'Python'],
+  },
+  {
+    name: 'Escbash',
+    focus: 'Shell and systems practice',
+    description:
+      'Terminal-first drills that sharpen day-to-day command-line speed: text processing, process management, networking and automation scripts.',
+    topics: ['Bash', 'awk / sed', 'Networking', 'systemd'],
+  },
+  {
+    name: 'Enterprise sandbox',
+    focus: 'Real production-like environment',
+    description:
+      'Enterprise-grade sandbox environments where I apply tools end to end: multi-service deployments, IAM, pipelines, monitoring and incident drills.',
+    topics: ['AWS', 'CI/CD', 'IAM', 'Observability', 'Incident response'],
+  },
+]
+
+export const labPrinciples = [
+  { title: 'Learn by applying', text: 'Every new tool is learned inside a live lab, not just from docs.' },
+  { title: 'Break and fix', text: 'Deliberately break environments and practise root-cause analysis.' },
+  { title: 'Carry it to work', text: 'What works in the lab becomes a pattern in real projects.' },
+]
+
 export const handshake = {
   title: 'Training frontier AI models with Handshake AI',
   description:

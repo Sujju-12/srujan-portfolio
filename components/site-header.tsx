@@ -6,6 +6,7 @@ const nav = [
   { href: '/#skills', label: 'Skills' },
   { href: '/#projects', label: 'Projects' },
   { href: '/#ai', label: 'AI' },
+  { href: '/#labs', label: 'Labs' },
   { href: '/learnings', label: 'Learnings' },
   { href: '/#contact', label: 'Contact' },
 ]

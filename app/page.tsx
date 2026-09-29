@@ -4,6 +4,7 @@ import { Experience } from '@/components/experience'
 import { Skills } from '@/components/skills'
 import { AiLearnings } from '@/components/ai-learnings'
 import { Projects } from '@/components/projects'
+import { HandsOnLabs } from '@/components/hands-on-labs'
 import { Contact } from '@/components/contact'
 import { SiteFooter } from '@/components/site-footer'
 
@@ -17,6 +18,7 @@ export default function Page() {
         <Skills />
         <Projects />
         <AiLearnings />
+        <HandsOnLabs />
         <Contact />
       </main>
       <SiteFooter />
