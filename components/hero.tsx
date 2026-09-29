@@ -2,17 +2,6 @@ import { ArrowDown, Download } from 'lucide-react'
 import { profile, stats } from '@/lib/data'
 import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
 
-const terminalLines = [
-  { prompt: true, text: 'kubectl get deployments -n production' },
-  { prompt: false, text: 'NAME            READY   UP-TO-DATE   AVAILABLE' },
-  { prompt: false, text: 'api-gateway     6/6     6            6' },
-  { prompt: false, text: 'orders-svc      4/4     4            4' },
-  { prompt: true, text: 'terraform apply -auto-approve' },
-  { prompt: false, text: 'Apply complete! Resources: 24 added, 0 changed.' },
-  { prompt: true, text: 'agent diagnose pod/orders-svc-7f9c' },
-  { prompt: false, text: 'Root cause: OOMKilled — memory limit 256Mi too low.' },
-]
-
 export function Hero() {
   return (
     <section id="top" className="mx-auto max-w-5xl px-6 pt-20 pb-16 text-center md:pt-28">
@@ -56,31 +45,6 @@ export function Hero() {
           <GithubIcon className="size-4" />
           GitHub
         </a>
-      </div>
-
-      <div className="mx-auto mt-16 max-w-3xl overflow-hidden rounded-2xl border border-border bg-foreground text-left shadow-2xl shadow-foreground/10">
-        <div className="flex items-center gap-2 border-b border-background/10 px-4 py-3">
-          <span className="size-3 rounded-full bg-[#ff5f57]" aria-hidden="true" />
-          <span className="size-3 rounded-full bg-[#febc2e]" aria-hidden="true" />
-          <span className="size-3 rounded-full bg-[#28c840]" aria-hidden="true" />
-          <span className="ml-3 font-mono text-xs text-background/50">srujan@devops ~ zsh</span>
-        </div>
-        <pre className="overflow-x-auto p-5 font-mono text-xs leading-relaxed text-background/85 md:text-sm">
-          <code>
-            {terminalLines.map((line, i) => (
-              <span key={i} className="block">
-                {line.prompt ? (
-                  <>
-                    <span className="text-[#5ac8fa]">{'$ '}</span>
-                    <span className="text-background">{line.text}</span>
-                  </>
-                ) : (
-                  <span className="text-background/60">{line.text}</span>
-                )}
-              </span>
-            ))}
-          </code>
-        </pre>
       </div>
 
       <dl className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-y-10 md:grid-cols-4">

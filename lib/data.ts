@@ -4,7 +4,7 @@ export const profile = {
   email: 'srujanraj12k93@gmail.com',
   phone: '+91-9391037911',
   github: 'https://github.com/Sujju-12',
-  linkedin: 'https://www.linkedin.com/in/srujan-kumar',
+  linkedin: 'https://www.linkedin.com/in/srujan-kumar-3666a7112',
   resume: '/srujan-kumar-resume.pdf',
 }
 
